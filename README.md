@@ -1,2 +1,2 @@
 # calculator
- https://popugalic.github.io/calculator /
+ https://popugalic.github.io/calculator/
