@@ -24,8 +24,6 @@ for(let i=0; i<operationsList.length; i++){
             }else if(this.innerHTML.includes("multiply")){
                 inputField.value = "*";
                 flag = "operation";
-                
-    
             }else if(this.innerHTML.includes("division")){
                 inputField.value = "/";
                 flag = "operation";
@@ -61,7 +59,6 @@ for(let i=0; i<operationsList.length; i++){
                 flag = "operation";
             }
         }
-        console.log(flag);
         
     });
 }
@@ -76,9 +73,13 @@ for(let i=0; i < numbersList.length; i++){
             value2 = 0;
             expression.innerText = "";
         }else if (this.innerHTML.includes("%")){
-            inputField.value = inputField.value+this.innerHTML;
+            expression.innerText=expression.innerText+inputField.value
+            inputField.value = value1/100;
+            value2 = value1/100
+
         }else if (this.innerHTML.includes(",")){
-            inputField.value = inputField.value+".";
+
+            inputField.value = !(inputField.value.includes("."))? inputField.value+".": inputField.value;
         }else if (this.innerHTML.includes("=")){
             value2 = inputField.value;
             expression.innerText = expression.innerText+value2;
@@ -95,12 +96,8 @@ for(let i=0; i < numbersList.length; i++){
             }
 
         }else if(value1 === 0){
-            
-            
             inputField.value = this.innerHTML;
-            
             value1 =value1+inputField.value;
-
             flag = "value";
             
         }else{
@@ -114,8 +111,6 @@ for(let i=0; i < numbersList.length; i++){
             value1 = value1+inputField.value;
             flag = "value";
         }
-        
-        console.log(expression);
     });
 }
 
